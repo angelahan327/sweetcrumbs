@@ -14,7 +14,7 @@ function setupContactForm() {
     // validate name
     var nameInput = document.getElementById("contact-name");
     var nameError = document.getElementById("contact-name-error");
-    if (nameInput.value.trim().length < 2) {
+    if (nameInput.value.trim().length < 1) {
       nameError.textContent = "Please enter your name.";
       nameError.style.display = "block";
       formIsValid = false;
@@ -68,8 +68,8 @@ function setupContactForm() {
     // validate message length
     var messageInput = document.getElementById("contact-message");
     var messageError = document.getElementById("contact-message-error");
-    if (messageInput.value.trim().length < 10) {
-      messageError.textContent = "Please enter a message (at least 10 characters).";
+    if (messageInput.value.trim().length < 1) {
+      messageError.textContent = "Please enter a message.";
       messageError.style.display = "block";
       formIsValid = false;
     } else {
