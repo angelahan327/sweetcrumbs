@@ -39,9 +39,9 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 14px;
       justify-content: center;
-      margin-top: 18px;
+      margin-top: 24px;
     }
 
     .hero-actions .btn--secondary {
@@ -57,7 +57,7 @@
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 24px;
     }
     @media (max-width: 760px) {
       .grid-3 { grid-template-columns: 1fr; }
@@ -76,7 +76,7 @@
       display: block;
     }
 
-    .item-col .item-text { padding: 14px 14px 16px; }
+    .item-col .item-text { padding: 20px 20px 24px; }
 
     ul.reasons {
       list-style: disc;
@@ -86,7 +86,7 @@
     }
 
     ul.reasons li {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       color: var(--muted);
     }
   </style>
@@ -126,56 +126,99 @@
 
   <!-- main content -->
   <main class="main-content container">
-    <!-- welcome section -->
-    <div class="section center">
-      <h2>Welcome to SweetCrumbs Bakery</h2>
-      <p>We're a small bakery that believes every day deserves something delicious.<br>
-         We bake everything from scratch using quality local ingredients.<br>
-         Let us make your day a little sweeter.</p>
-    </div>
+    <!-- about section -->
+    <section id="about" class="section center">
+      <h2>About SweetCrumbs</h2>
+      <div class="panel">
+        <p>SweetCrumbs began when a group of college friends shared a passion for baking. In 2026 we opened our doors in Maplewood to share handcrafted cakes, pastries, and breads made from scratch with quality local ingredients. No preservatives, no shortcuts—just the kind of treats that make every day a little sweeter.</p>
+        <p style="margin-top: 14px;"><a href="about.html">Meet the team and read our full story →</a></p>
+      </div>
+    </section>
 
     <hr />
 
-    <!-- fan favorites section -->
-    <div class="section center">
+    <!-- fan favorites -->
+    <section class="section center">
       <h2>Our Fan Favorites</h2>
-      <div class="grid-3" id="featured-items"><!-- populated from data.json --></div>
-      <!-- see menu call-to-action -->
+      <div class="grid-3" id="featured-items"><!-- from data --></div>
       <div class="mt-lg">
         <a href="menu.html" class="btn btn--secondary">See Full Menu</a>
       </div>
-    </div>
+    </section>
 
     <hr />
 
-    <!-- customer reviews section -->
-    <div class="section center">
+    <!-- faq section -->
+    <section id="faq" class="section center">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-accordion" data-accordion="single">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button type="button" class="accordion-trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-panel-1">
+              Do you offer vegan or gluten-free options?<span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div id="faq-panel-1" class="accordion-panel" role="region" aria-labelledby="faq-trigger-1" hidden>
+            <p>We have a rotating selection of vegan cookies and gluten-free brownies available daily. Ask our staff what's fresh today!</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button type="button" class="accordion-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-panel-2">
+              How early should I order a custom cake?<span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div id="faq-panel-2" class="accordion-panel" role="region" aria-labelledby="faq-trigger-2" hidden>
+            <p>We recommend placing custom orders at least 1 week in advance. For weddings or large events, 1 month is preferred.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button type="button" class="accordion-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
+              Do you take pre-orders for holiday treats?<span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div id="faq-panel-3" class="accordion-panel" role="region" aria-labelledby="faq-trigger-3" hidden>
+            <p>Yes, we open holiday pre-orders on our website two weeks before major holidays. Check our homepage for updates.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button type="button" class="accordion-trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-panel-4">
+              Are your ingredients locally sourced?<span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div id="faq-panel-4" class="accordion-panel" role="region" aria-labelledby="faq-trigger-4" hidden>
+            <p>Whenever possible! We source dairy and seasonal fruits from local farms within the tristate area.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- customer reviews -->
+    <section class="section center">
       <h2>What Our Customers Say</h2>
-      <div class="grid-3" id="reviews-container"><!-- populated from data.json --></div>
-    </div>
+      <div class="grid-3" id="reviews-container"><!-- from data --></div>
+    </section>
 
     <hr />
 
-    <!-- why choose us section -->
-    <div class="section center reasons-section">
-      <h2>Why Choose SweetCrumbs?</h2>
-      <ul class="reasons">
-        <li>Everything baked fresh from scratch every morning</li>
-        <li>No preservatives or artificial flavors</li>
-        <li>Custom cakes for weddings, birthdays, and special events</li>
-        <li>Locally sourced ingredients whenever possible</li>
-        <li>A warm, welcoming space to enjoy your treats</li>
-        <li>Online ordering for pickup: easy and fast</li>
-      </ul>
-    </div>
-
-    <!-- order call-to-action -->
+    <!-- why us -->
     <div class="section center">
-      <h2>Ready to Place an Order?</h2>
-      <p>Whether it's a dozen croissants or a custom cake, we'd love to help.</p>
-      <a href="order.html" class="btn btn--primary">Place an Order</a>
+      <h2>Why Choose SweetCrumbs?</h2>
+      <div class="panel">
+        <ul class="reasons">
+          <li>Everything baked fresh from scratch every morning</li>
+          <li>No preservatives or artificial flavors</li>
+          <li>Custom cakes for weddings, birthdays, and special events</li>
+          <li>Locally sourced ingredients whenever possible</li>
+          <li>A warm, welcoming space to enjoy your treats</li>
+          <li>Online ordering for pickup: easy and fast</li>
+        </ul>
+      </div>
     </div>
-
   </main>
 
   <!-- site footer -->
@@ -190,5 +233,6 @@
 
   <!-- site scripts -->
   <script src="js/home.js"></script>
+  <script src="js/faq.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 // order page - form validation
 
-// show nice names in the confirmation message
+// friendly names for confirmation
 var itemNames = {
   "custom-cake": "Custom Cake",
   "cupcakes": "Cupcakes (Dozen)",
@@ -9,7 +9,7 @@ var itemNames = {
   "other": "Custom Request"
 };
 
-// order form validation
+// setup order form
 function setupOrderForm() {
   var orderForm = document.getElementById("order-form");
   if (!orderForm) {
@@ -78,7 +78,7 @@ function setupOrderForm() {
       dateError.style.display = "none";
     }
 
-    // show thank you and reset
+    // show confirmation and reset
     if (formIsValid) {
       var selectedItem = itemSelect.value;
       var friendlyName = itemNames[selectedItem];
@@ -100,6 +100,4 @@ function setupOrderForm() {
 }
 
 // run on page load
-document.addEventListener("DOMContentLoaded", function() {
-  setupOrderForm();
-});
+document.addEventListener("DOMContentLoaded", setupOrderForm);

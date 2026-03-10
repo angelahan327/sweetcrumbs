@@ -1,6 +1,6 @@
 // home page - featured items and reviews
 
-// build one featured item as HTML
+// build one featured item html
 function makeItemHtml(item) {
   var imageSrc = item.image;
   var imageAlt = item.alt || "";
@@ -12,7 +12,7 @@ function makeItemHtml(item) {
     '<p>' + description + '</p></div></div>';
 }
 
-// build all featured items and put them on the page
+// build all featured items
 function buildFeaturedItems(container, featuredItems) {
   if (!container || !featuredItems || featuredItems.length === 0) {
     return;
@@ -25,7 +25,7 @@ function buildFeaturedItems(container, featuredItems) {
   container.innerHTML = html;
 }
 
-// build one review box as HTML
+// build one review html
 function makeReviewHtml(review) {
   return '<div class="review-box">' +
     '<p>"' + review.quote + '"</p>' +
@@ -33,7 +33,7 @@ function makeReviewHtml(review) {
     '</div>';
 }
 
-// build all reviews and put them on the page
+// build all reviews
 function buildReviews(container, reviews) {
   if (!container || !reviews || reviews.length === 0) {
     return;
@@ -46,7 +46,7 @@ function buildReviews(container, reviews) {
   container.innerHTML = html;
 }
 
-// when page loads: get data and fill the page
+// fetch data and render on load
 function initHomePage() {
   var featuredEl = document.getElementById("featured-items");
   var reviewsEl = document.getElementById("reviews-container");

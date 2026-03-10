@@ -1,18 +1,18 @@
 // faq page - accordion
 
-// close one accordion section
+// close section
 function closeSection(button, content) {
   button.setAttribute("aria-expanded", "false");
   content.hidden = true;
 }
 
-// open one accordion section
+// open section
 function openSection(button, content) {
   button.setAttribute("aria-expanded", "true");
   content.hidden = false;
 }
 
-// set up the accordion when page loads
+// setup accordion on load
 function setupAccordion() {
   var accordion = document.querySelector(".faq-accordion[data-accordion]");
   if (!accordion) {
@@ -32,10 +32,10 @@ function setupAccordion() {
       continue;
     }
 
-    // start with all closed
+    // init all closed
     closeSection(button, content);
 
-    // when user clicks, toggle open/close
+    // toggle on click
     button.addEventListener("click", function() {
       var clickedButton = this;
       var contentId = clickedButton.getAttribute("aria-controls");
@@ -47,7 +47,7 @@ function setupAccordion() {
 
       var isOpen = clickedButton.getAttribute("aria-expanded") === "true";
 
-      // if only one can be open, close all others first
+      // close others if single-open
       if (onlyOneOpen) {
         var j;
         for (j = 0; j < buttons.length; j++) {
@@ -59,7 +59,7 @@ function setupAccordion() {
         }
       }
 
-      // open the clicked one if it was closed
+      // open clicked if was closed
       if (isOpen === false) {
         openSection(clickedButton, content);
       }

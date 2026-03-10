@@ -75,7 +75,7 @@ function setupContactForm() {
       messageError.style.display = "none";
     }
 
-    // show thank you and reset
+    // show confirmation and reset
     if (formIsValid) {
       var userName = nameInput.value.trim();
       alert(
@@ -89,6 +89,4 @@ function setupContactForm() {
 }
 
 // run on page load
-document.addEventListener("DOMContentLoaded", function() {
-  setupContactForm();
-});
+document.addEventListener("DOMContentLoaded", setupContactForm);

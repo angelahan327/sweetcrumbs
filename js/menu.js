@@ -13,7 +13,7 @@ function setupMenuFilters() {
     filterButtons[i].addEventListener("click", function() {
       var chosenFilter = this.getAttribute("data-menu-filter");
 
-      // update which button looks active
+      // set active button
       var j;
       for (j = 0; j < filterButtons.length; j++) {
         if (filterButtons[j].getAttribute("data-menu-filter") === chosenFilter) {
@@ -25,7 +25,7 @@ function setupMenuFilters() {
         }
       }
 
-      // show or hide each menu card
+      // filter menu cards
       var cards = menuGrid.querySelectorAll(".menu-card");
       var k;
       for (k = 0; k < cards.length; k++) {
