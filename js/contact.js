@@ -1,6 +1,6 @@
 // form validation
 
-// wires up contact form to validate name/email/reason/reply method/message, then shows thank-you alert and resets if valid
+// validates name/email/reason/reply method/message, then shows thank you alert and resets if valid
 function setupContactForm() {
   var contactForm = document.getElementById("contact-form");
   if (!contactForm) {

@@ -1,6 +1,6 @@
 // accordion
 
-// close section — hides the accordion content and flips the icon back to "add"
+// close section: hides the accordion content and creates "add" icon
 function closeSection(button, content) {
   button.setAttribute("aria-expanded", "false");
   content.hidden = true;
@@ -8,7 +8,7 @@ function closeSection(button, content) {
   if (icon) icon.textContent = "add";
 }
 
-// open section — shows the accordion content and flips the icon to "remove"
+// open section: shows the accordion content and creates "remove" icon
 function openSection(button, content) {
   button.setAttribute("aria-expanded", "true");
   content.hidden = false;
@@ -16,7 +16,7 @@ function openSection(button, content) {
   if (icon) icon.textContent = "remove";
 }
 
-// init accordion — sets up the FAQ so clicking a question toggles it open/closed (and only one stays open if data-accordion is single)
+// init accordion: clicking a question makes it open/closed
 function setupAccordion() {
   var accordion = document.querySelector(".faq-accordion[data-accordion]");
   if (!accordion) {

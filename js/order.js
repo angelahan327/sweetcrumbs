@@ -9,7 +9,7 @@ var itemNames = {
   "other": "Custom Request"
 };
 
-// init form — wires up order form to validate name/email/phone/item/date, then shows thank-you alert and resets if everything's good
+// init form — validates name/email/phone/item/date, then shows thank you alert and resets if valid
 function setupOrderForm() {
   var orderForm = document.getElementById("order-form");
   if (!orderForm) {

@@ -1,6 +1,6 @@
-// home page - featured items and reviews
+// home page
 
-// homegrown object: represents a single featured item
+// homegrown object represents a single featured item
 function FeaturedItem(name, description, image, alt) {
   this.name = name;
   this.description = description;
@@ -8,7 +8,7 @@ function FeaturedItem(name, description, image, alt) {
   this.alt = alt || "";
 }
 
-// build one featured item html
+// one featured item html
 function makeItemHtml(item) {
   var imageSrc = item.image;
   var imageAlt = item.alt || "";
@@ -20,7 +20,7 @@ function makeItemHtml(item) {
     '<p>' + description + '</p></div></div>';
 }
 
-// build all featured items
+// all featured items
 function buildFeaturedItems(container, featuredItems) {
   if (!container || !featuredItems || featuredItems.length === 0) {
     return;
@@ -33,7 +33,7 @@ function buildFeaturedItems(container, featuredItems) {
   container.innerHTML = html;
 }
 
-// build one review html
+// one review html
 function makeReviewHtml(review) {
   return '<div class="review-box">' +
     '<p>"' + review.quote + '"</p>' +
@@ -41,7 +41,7 @@ function makeReviewHtml(review) {
     '</div>';
 }
 
-// build all reviews
+// all reviews
 function buildReviews(container, reviews) {
   if (!container || !reviews || reviews.length === 0) {
     return;
@@ -54,7 +54,7 @@ function buildReviews(container, reviews) {
   container.innerHTML = html;
 }
 
-// fetch data and render on load
+// get data and render on load
 function initHomePage() {
   var featuredEl = document.getElementById("featured-items");
   var reviewsEl = document.getElementById("reviews-container");

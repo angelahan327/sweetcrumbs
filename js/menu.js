@@ -1,6 +1,6 @@
 // category filter
 
-// when you click a filter button it highlights it and only shows menu cards that match that category
+// when you click a filter button it only shows menu cards that match that category
 function setupMenuFilters() {
   var menuGrid = document.getElementById("menu-grid");
   if (!menuGrid) {
