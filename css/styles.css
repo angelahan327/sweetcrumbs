@@ -113,7 +113,7 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 243, 230, 0.82);
+  background: #fff3e6;
   padding: 14px 18px;
   display: flex;
   align-items: center;
@@ -215,13 +215,6 @@ header nav a:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px
 /* Footer */
 .footer {
   background: var(--paper);
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgba(93, 64, 55, 0.04) 0px,
-    rgba(93, 64, 55, 0.04) 1px,
-    transparent 1px,
-    transparent 12px
-  );
   padding: 32px 40px;
   color: var(--brand);
   font-weight: 800;
