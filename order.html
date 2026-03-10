@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- order page -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="custom order, bakery order, custom cake, SweetCrumbs, order online" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css">
+  <title>SweetCrumbs Bakery | Custom Order Form</title>
+</head>
+<body class="sticky-footer-page">
+
+  <!-- site header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">SweetCrumbs Bakery</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html" class="active">Order</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main content -->
+  <main class="main-content container container--narrow">
+
+    <h1 class="page-title">Order Request Form</h1>
+    <p class="subhead">All orders require at least <strong>48 hours advance notice</strong>. Custom cakes need 5-7 days.<br>
+    Fill out the form below and we'll reach out to confirm the details.</p>
+
+    <!-- order form section -->
+    <section class="panel">
+      <h2 class="section-title">Order details</h2>
+      <form id="order-form" class="form" novalidate>
+
+        <!-- name and email fields -->
+        <div class="form-grid">
+          <div class="field">
+            <label for="full-name">Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="" />
+            <span class="error-msg" id="name-error">Please enter your full name.</span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="" />
+            <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+          </div>
+        </div>
+
+        <!-- phone and date fields -->
+        <div class="form-grid">
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="" />
+            <span class="error-msg" id="phone-error">Please enter a phone number.</span>
+          </div>
+
+          <div class="field">
+            <label for="pickup-date">Requested Pickup Date</label>
+            <input type="date" id="pickup-date" name="pickup-date" />
+            <span class="error-msg" id="date-error">Please select a pickup date.</span>
+          </div>
+        </div>
+
+        <!-- item type dropdown -->
+        <div class="field">
+          <label for="item-type">What would you like to order?</label>
+          <select id="item-type" name="item-type">
+            <option value="">Select an item</option>
+            <option value="custom-cake">Custom Cake</option>
+            <option value="cupcakes">Cupcakes (Dozen)</option>
+            <option value="pastry-platter">Pastry Platter</option>
+            <option value="bread-assortment">Bread Assortment</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error-msg" id="item-error">Please select an item type.</span>
+        </div>
+
+        <!-- add-on checkboxes -->
+        <div class="field">
+          <label>Add-ons (select all that apply)</label>
+          <div class="checkbox-group">
+            <div class="checkline">
+              <input type="checkbox" name="addons" value="candles" id="cb-candles" />
+              <label for="cb-candles">Birthday Candles</label>
+            </div>
+            <div class="checkline">
+              <input type="checkbox" name="addons" value="message" id="cb-message" />
+              <label for="cb-message">Custom Message on Cake</label>
+            </div>
+            <div class="checkline">
+              <input type="checkbox" name="addons" value="gluten-free" id="cb-gf" />
+              <label for="cb-gf">Gluten-Free Option</label>
+            </div>
+            <div class="checkline">
+              <input type="checkbox" name="addons" value="vegan" id="cb-vegan" />
+              <label for="cb-vegan">Vegan Option</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- special instructions field -->
+        <div class="field">
+          <label for="special-instructions">Special Instructions / Notes</label>
+          <textarea id="special-instructions" name="special-instructions" rows="6" placeholder=""></textarea>
+        </div>
+
+        <!-- submit button -->
+        <div class="submit-row">
+          <button type="submit" class="btn btn--primary">Submit Order</button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- site footer -->
+  <footer class="footer">
+    <a href="index.html">SweetCrumbs Bakery</a>
+    <p>
+      <strong>Hours:</strong> Tue-Sun, 7am-3pm<br>
+      <strong>Phone:</strong> (973) 555-0100<br>
+      <strong>Email:</strong> sweetcrumbs@gmail.com
+    </p>
+  </footer>
+
+  <!-- site scripts -->
+  <script src="js/order.js"></script>
+</body>
+</html>
