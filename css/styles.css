@@ -1,7 +1,4 @@
-/* External font */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Lato:wght@400;700&display=swap');
-
-/* Design tokens */
+/* Design */
 :root {
   --bg: #fffdfb;
   --text: #1e1a17;
@@ -20,7 +17,6 @@
   --container: 1100px;
 }
 
-/* Global defaults */
 * { box-sizing: border-box; }
 body {
   font-family: var(--font-sans);
