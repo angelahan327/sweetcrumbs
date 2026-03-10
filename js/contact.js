@@ -1,5 +1,6 @@
-// contact page - form validation
+// form validation
 
+// wires up contact form to validate name/email/reason/reply method/message, then shows thank-you alert and resets if valid
 function setupContactForm() {
   var contactForm = document.getElementById("contact-form");
   if (!contactForm) {
@@ -75,7 +76,7 @@ function setupContactForm() {
       messageError.style.display = "none";
     }
 
-    // show confirmation and reset
+    // confirm and reset
     if (formIsValid) {
       var userName = nameInput.value.trim();
       alert(
@@ -88,5 +89,5 @@ function setupContactForm() {
   });
 }
 
-// run on page load
+// init
 document.addEventListener("DOMContentLoaded", setupContactForm);

@@ -478,7 +478,18 @@ hr {
 }
 
 /* FAQ accordion */
-.faq-accordion { border-top: 1px solid rgba(93, 64, 55, 0.16); width: 100%; }
+.faq-accordion-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  contain: inline-size;
+}
+.faq-accordion {
+  border-top: 1px solid rgba(93, 64, 55, 0.16);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 .accordion-item { border-bottom: 1px solid rgba(93, 64, 55, 0.16); width: 100%; }
 .accordion-header { margin: 0; }
 
@@ -507,30 +518,22 @@ hr {
 }
 
 .accordion-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  position: relative;
-  background: rgba(255, 250, 245, 0.9);
-  border: 1px solid rgba(93, 64, 55, 0.18);
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--accent);
 }
 
-.accordion-icon::before,
-.accordion-icon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: var(--accent);
-  transform: translate(-50%, -50%);
-  border-radius: 2px;
+.accordion-icon .material-icons {
+  font-size: 24px;
 }
 
-.accordion-icon::before { width: 12px; height: 2px; }
-.accordion-icon::after { width: 2px; height: 12px; }
-.accordion-trigger[aria-expanded="true"] .accordion-icon::after { display: none; }
 
-.accordion-panel { padding: 0 10px 20px; }
+.accordion-panel {
+  padding: 0 10px 20px;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 .accordion-panel p { margin: 0; color: var(--muted); line-height: 1.6; }
 
 /* Tablet: 2-col grids */

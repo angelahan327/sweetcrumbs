@@ -6,20 +6,43 @@
   <meta name="keywords" content="bakery, cakes, pastries, bread, custom cakes, artisan, SweetCrumbs, Maplewood" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     .hero {
       position: relative;
       isolation: isolate;
       text-align: center;
       color: #fff;
-      padding: clamp(56px, 8vw, 96px) 0;
-      background: radial-gradient(1200px 400px at 20% -10%, rgba(255, 255, 255, 0.22), transparent 60%),
-        linear-gradient(135deg, rgba(93, 64, 55, 0.96), rgba(141, 110, 99, 0.70));
-      background-size: cover;
-      background-position: center;
+      margin-top: -88px;
+      padding-top: calc(88px + clamp(56px, 8vw, 96px));
+      padding-bottom: clamp(56px, 8vw, 96px);
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-banner-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     .hero .container {
+      position: relative;
+      z-index: 1;
       padding-top: 0;
       padding-bottom: 0;
     }
@@ -151,11 +174,12 @@
     <!-- faq section -->
     <section id="faq" class="section center">
       <h2>Frequently Asked Questions</h2>
-      <div class="faq-accordion" data-accordion="single">
+      <div class="faq-accordion-wrap">
+        <div class="faq-accordion" data-accordion="single">
         <div class="accordion-item">
           <h3 class="accordion-header">
             <button type="button" class="accordion-trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-panel-1">
-              Do you offer vegan or gluten-free options?<span class="accordion-icon" aria-hidden="true"></span>
+              Do you offer vegan or gluten-free options?<span class="accordion-icon" aria-hidden="true"><span class="material-icons">add</span></span>
             </button>
           </h3>
           <div id="faq-panel-1" class="accordion-panel" role="region" aria-labelledby="faq-trigger-1" hidden>
@@ -165,7 +189,7 @@
         <div class="accordion-item">
           <h3 class="accordion-header">
             <button type="button" class="accordion-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-panel-2">
-              How early should I order a custom cake?<span class="accordion-icon" aria-hidden="true"></span>
+              How early should I order a custom cake?<span class="accordion-icon" aria-hidden="true"><span class="material-icons">add</span></span>
             </button>
           </h3>
           <div id="faq-panel-2" class="accordion-panel" role="region" aria-labelledby="faq-trigger-2" hidden>
@@ -175,7 +199,7 @@
         <div class="accordion-item">
           <h3 class="accordion-header">
             <button type="button" class="accordion-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
-              Do you take pre-orders for holiday treats?<span class="accordion-icon" aria-hidden="true"></span>
+              Do you take pre-orders for holiday treats?<span class="accordion-icon" aria-hidden="true"><span class="material-icons">add</span></span>
             </button>
           </h3>
           <div id="faq-panel-3" class="accordion-panel" role="region" aria-labelledby="faq-trigger-3" hidden>
@@ -185,13 +209,14 @@
         <div class="accordion-item">
           <h3 class="accordion-header">
             <button type="button" class="accordion-trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-panel-4">
-              Are your ingredients locally sourced?<span class="accordion-icon" aria-hidden="true"></span>
+              Are your ingredients locally sourced?<span class="accordion-icon" aria-hidden="true"><span class="material-icons">add</span></span>
             </button>
           </h3>
           <div id="faq-panel-4" class="accordion-panel" role="region" aria-labelledby="faq-trigger-4" hidden>
             <p>Whenever possible! We source dairy and seasonal fruits from local farms within the tristate area.</p>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
