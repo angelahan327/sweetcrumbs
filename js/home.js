@@ -1,6 +1,14 @@
-// featured + reviews
+// home page - featured items and reviews
 
-// build item — turns one featured item object into the HTML string for its card
+// homegrown object: represents a single featured item
+function FeaturedItem(name, description, image, alt) {
+  this.name = name;
+  this.description = description;
+  this.image = image;
+  this.alt = alt || "";
+}
+
+// build one featured item html
 function makeItemHtml(item) {
   var imageSrc = item.image;
   var imageAlt = item.alt || "";
@@ -12,7 +20,7 @@ function makeItemHtml(item) {
     '<p>' + description + '</p></div></div>';
 }
 
-// build items — loops through featured items, builds HTML for each, dumps it all into the container
+// build all featured items
 function buildFeaturedItems(container, featuredItems) {
   if (!container || !featuredItems || featuredItems.length === 0) {
     return;
@@ -25,7 +33,7 @@ function buildFeaturedItems(container, featuredItems) {
   container.innerHTML = html;
 }
 
-// build review — turns one review object into the HTML for that review box
+// build one review html
 function makeReviewHtml(review) {
   return '<div class="review-box">' +
     '<p>"' + review.quote + '"</p>' +
@@ -33,7 +41,7 @@ function makeReviewHtml(review) {
     '</div>';
 }
 
-// build reviews — loops through reviews, builds HTML for each, puts them in the container
+// build all reviews
 function buildReviews(container, reviews) {
   if (!container || !reviews || reviews.length === 0) {
     return;
@@ -46,7 +54,7 @@ function buildReviews(container, reviews) {
   container.innerHTML = html;
 }
 
-// fetch and render — loads data.json and fills in the featured items + reviews sections on the homepage
+// fetch data and render on load
 function initHomePage() {
   var featuredEl = document.getElementById("featured-items");
   var reviewsEl = document.getElementById("reviews-container");
@@ -59,7 +67,15 @@ function initHomePage() {
       return response.json();
     })
     .then(function(data) {
-      buildFeaturedItems(featuredEl, data.featuredItems);
+      // build FeaturedItem objects from the JSON data
+      var items = [];
+      var i;
+      for (i = 0; i < data.featuredItems.length; i++) {
+        var raw = data.featuredItems[i];
+        var item = new FeaturedItem(raw.name, raw.description, raw.image, raw.alt);
+        items.push(item);
+      }
+      buildFeaturedItems(featuredEl, items);
       buildReviews(reviewsEl, data.reviews);
     })
     .catch(function(err) {
@@ -67,5 +83,5 @@ function initHomePage() {
     });
 }
 
-// init
+// run on page load
 document.addEventListener("DOMContentLoaded", initHomePage);

@@ -1,3 +1,6 @@
+/* External font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Lato:wght@400;700&display=swap');
+
 /* Design tokens */
 :root {
   --bg: #fffdfb;
@@ -10,8 +13,8 @@
   --paper-2: #fffaf5;
   --border: rgba(93, 64, 55, 0.16);
   --ring: rgba(202, 166, 138, 0.55);
-  --font-sans: Georgia, 'Times New Roman', serif;
-  --font-display: Georgia, serif;
+  --font-sans: 'Lato', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --radius-sm: 10px;
   --radius-md: 14px;
   --container: 1100px;
@@ -212,6 +215,13 @@ header nav a:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px
 /* Footer */
 .footer {
   background: var(--paper);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(93, 64, 55, 0.04) 0px,
+    rgba(93, 64, 55, 0.04) 1px,
+    transparent 1px,
+    transparent 12px
+  );
   padding: 32px 40px;
   color: var(--brand);
   font-weight: 800;
@@ -291,6 +301,11 @@ hr {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 28px;
   margin-top: 36px;
+}
+
+/* 4-column team grid variant */
+.team-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .member img {
@@ -478,18 +493,7 @@ hr {
 }
 
 /* FAQ accordion */
-.faq-accordion-wrap {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  contain: inline-size;
-}
-.faq-accordion {
-  border-top: 1px solid rgba(93, 64, 55, 0.16);
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
+.faq-accordion { border-top: 1px solid rgba(93, 64, 55, 0.16); width: 100%; }
 .accordion-item { border-bottom: 1px solid rgba(93, 64, 55, 0.16); width: 100%; }
 .accordion-header { margin: 0; }
 
@@ -518,22 +522,30 @@ hr {
 }
 
 .accordion-icon {
-  display: inline-flex;
-  flex-shrink: 0;
-  color: var(--accent);
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  position: relative;
+  background: rgba(255, 250, 245, 0.9);
+  border: 1px solid rgba(93, 64, 55, 0.18);
 }
 
-.accordion-icon .material-icons {
-  font-size: 24px;
+.accordion-icon::before,
+.accordion-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--accent);
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
 }
 
+.accordion-icon::before { width: 12px; height: 2px; }
+.accordion-icon::after { width: 2px; height: 12px; }
+.accordion-trigger[aria-expanded="true"] .accordion-icon::after { display: none; }
 
-.accordion-panel {
-  padding: 0 10px 20px;
-  text-align: left;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
+.accordion-panel { padding: 0 10px 20px; }
 .accordion-panel p { margin: 0; color: var(--muted); line-height: 1.6; }
 
 /* Tablet: 2-col grids */
@@ -542,6 +554,9 @@ hr {
     grid-template-columns: 1fr 1fr;
   }
   .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .team-grid--4 {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -563,6 +578,9 @@ hr {
   .team-grid {
     grid-template-columns: 1fr;
   }
+  .team-grid--4 {
+    grid-template-columns: 1fr 1fr;
+  }
   .hero-actions {
     flex-direction: column;
     align-items: center;
@@ -570,6 +588,13 @@ hr {
   .hero-actions .btn {
     width: 100%;
     max-width: 260px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .team-grid--4 {
+    grid-template-columns: 1fr;
   }
 }
 
