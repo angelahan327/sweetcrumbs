@@ -59,6 +59,9 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
+    @media (max-width: 760px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
 
     .item-col {
       overflow: hidden;
