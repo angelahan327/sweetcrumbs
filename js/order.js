@@ -1,6 +1,6 @@
 // order page - form validation
 
-// menu items with prices (matches the menu page)
+// menu items with prices 
 var itemNames = {
   "butter-croissant":      { label: "Butter Croissant",          price: 4.25 },
   "cinnamon-roll":         { label: "Cinnamon Roll",              price: 4.95 },
@@ -128,6 +128,9 @@ function setupOrderForm() {
       }
       var addonLine = addonLabels.length > 0 ? "Add-ons: " + addonLabels.join(", ") + "\n" : "";
 
+      var specialInput = document.getElementById("special-instructions");
+      var specialLine = specialInput && specialInput.value.trim() ? "Notes: " + specialInput.value.trim() + "\n" : "";
+
       // build total line
       var totalLine = "";
       if (itemPrice !== null) {
@@ -143,6 +146,7 @@ function setupOrderForm() {
         "Item: " + friendlyName + "\n" +
         "Quantity: " + qtyValue + "\n" +
         addonLine +
+        specialLine +
         totalLine +
         "Requested Pickup: " + pickupDate + "\n\n" +
         "We'll be in touch within 24 hours to confirm your order.\n" +

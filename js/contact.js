@@ -79,9 +79,13 @@ function setupContactForm() {
     // confirm and reset
     if (formIsValid) {
       var userName = nameInput.value.trim();
+      var newsletterCheck = document.getElementById("newsletter");
+      var newsletterNote = newsletterCheck && newsletterCheck.checked
+        ? " You're on our list for bakery updates!\n\n"
+        : "\n";
       alert(
         "Thank you, " + userName + "!\n\n" +
-        "We received your message and will get back to you soon.\n" +
+        "We received your message and will get back to you soon." + newsletterNote +
         "SweetCrumbs Bakery"
       );
       contactForm.reset();

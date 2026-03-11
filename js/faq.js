@@ -1,19 +1,15 @@
 // accordion
 
-// close section: hides the accordion content and creates "add" icon
+// close section: hides the accordion content
 function closeSection(button, content) {
   button.setAttribute("aria-expanded", "false");
   content.hidden = true;
-  var icon = button.querySelector(".accordion-icon .material-icons");
-  if (icon) icon.textContent = "add";
 }
 
-// open section: shows the accordion content and creates "remove" icon
+// open section: shows the accordion content
 function openSection(button, content) {
   button.setAttribute("aria-expanded", "true");
   content.hidden = false;
-  var icon = button.querySelector(".accordion-icon .material-icons");
-  if (icon) icon.textContent = "remove";
 }
 
 // init accordion: clicking a question makes it open/closed
