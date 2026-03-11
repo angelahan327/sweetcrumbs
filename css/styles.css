@@ -8,8 +8,8 @@
   --accent: #8d6e63;
   --paper: #fff3e6;
   --paper-2: #fffaf5;
-  --border: rgba(93, 64, 55, 0.16);
-  --ring: rgba(202, 166, 138, 0.55);
+  --border: #5d403729;
+  --ring: #caa68a8c;
   --font-sans: Georgia, serif;
   --font-display: Georgia, serif;
   --radius-sm: 10px;
@@ -193,7 +193,7 @@ header nav a:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px
 }
 
 .btn--primary:hover {
-  background: var(--brand-2);
+  background: #1a0f0a;
 }
 
 .btn--secondary {
@@ -203,7 +203,7 @@ header nav a:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px
 }
 
 .btn--secondary:hover {
-  background: var(--brand-2);
+  background: #1a0f0a;
 }
 
 .btn:active { transform: translateY(1px); }
